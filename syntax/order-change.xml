@@ -950,6 +950,11 @@
                     <Description>Identifies the Line Item assigned by the buyer.</Description>
                     <Value type="EXAMPLE">1</Value>
                 </Element>
+
+                <Element cardinality="0..1">
+                    <Term>cbc:LineStatusCode</Term>
+                    <Name>Line status</Name>
+                </Element>
                 
                 <Element>
                     <Term>cbc:Quantity</Term>
