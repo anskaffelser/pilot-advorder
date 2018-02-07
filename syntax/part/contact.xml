@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure-1" cardinality="0..1">
+    <Term>cac:Contact</Term>
+    <Description>Contact information</Description>
+
+    <Element cardinality="0..1">
+        <Term>cbc:ID</Term>
+        <Name>Contact ID</Name>
+        <Description>Customer reference (“Your ref”) to be returned in the Invoice, e.g.Employee-no.</Description>
+        <Value type="EXAMPLE">3150bdn</Value>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cbc:Name</Term>
+        <Name>Contact person name</Name>
+        <Description>The name of the contact person.</Description>
+        <Value type="EXAMPLE">Ole Olsen</Value>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cbc:Telephone</Term>
+        <Name>Contact telephone number</Name>
+        <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
+        <Value type="EXAMPLE">23055000</Value>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cbc:Telefax</Term>
+        <Name>Contact fax number</Name>
+        <Description>A fax number for the contact persons.</Description>
+        <Value type="EXAMPLE">23055001</Value>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cbc:ElectronicMail</Term>
+        <Name>Contact email address</Name>
+        <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
+        <Value type="EXAMPLE">post@helseforetak.no</Value>
+    </Element>
+</Element>

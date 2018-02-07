@@ -1,0 +1,29 @@
+version: '2'
+services:
+
+  target-rm:
+    image: "alpine:3.6"
+    command: sh -c 'if [ -e /src/target ]; then rm -rf /src/target/*; fi'
+    volumes:
+     - .:/src
+
+  asciidoctor:
+    image: "difi/asciidoctor"
+    volumes:
+     - .:/documents
+     - ./target:/target
+
+  structure:
+    image: "difi/vefa-structure:0.5"
+    volumes:
+     - .:/src
+     - ./target:/target
+
+  serve:
+    image: "python:3-alpine"
+    command: python3 -m http.server 8000 -b 0.0.0.0
+    volumes:
+     - .:/src
+    ports:
+     - "8000:8000"
+    working_dir: /src/target

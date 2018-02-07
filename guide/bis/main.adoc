@@ -1,0 +1,24 @@
+= Advanced Ordering
+Agency of Public Management and eGovernment
+v0.9
+:description: This document describes the use of data formats related to advanced ordering.
+:doctype: book
+:icons: font
+:toc: left
+:toclevels: 2
+:source-highlighter: coderay
+:source-language: xml
+:sectanchors:
+:sectnums:
+// :title-logo-image: {shared-dir}/images/logo.jpg
+
+{description}
+
+:leveloffset: +1
+
+include::introduction.adoc[]
+
+include::usecase/index.adoc[]
+
+include::appendix/index.adoc[]
+
