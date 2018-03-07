@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+    <Term>cbc:ProfileID</Term>
+    <Name>Profile identifier</Name>
+    <Description>Identifies the BII profile or business process context in which the transaction appears.</Description>
+    <Value type="FIXED">urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot</Value>
+</Element>

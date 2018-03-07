@@ -26,15 +26,10 @@
             <Term>cbc:CustomizationID</Term>
             <Name>Customization identifier</Name>
             <Description>Identifies the specification of content and rules that apply to the transaction.</Description>
-            <Value type="FIXED">urn:www.cenbii.eu:transaction:biitrns001:ver2.0: extended:urn:www.peppol.eu:bis:peppol28a:ver1.0: extended:urn:www.difi.no:ehf:ordre:ver1.0</Value>
+            <Value type="FIXED">urn:fdc:difi.no:2017:ehf:order-change:3.0-pilot</Value>
         </Element>
-        
-        <Element>
-            <Term>cbc:ProfileID</Term>
-            <Name>Profile identifier</Name>
-            <Description>Identifies the BII profile or business process context in which the transaction appears.</Description>
-            <Value type="FIXED">urn:www.cenbii.eu:profile:bii28:ver2.0</Value>
-        </Element>
+
+        <Include>part/document/profile.xml</Include>
 
         <Element>
             <Term>cbc:ID</Term>
@@ -1174,20 +1169,11 @@
                             A short name optionally given to an item, such as a name from a Catalogue, as distinct from a description.</Description>
                         <Value type="EXAMPLE">Wet tissues</Value>
                     </Element>
-                    
-                    <Element cardinality="0..1">
-                        <Term>cac:SellersItemIdentification</Term>
-                        <Description>Information about Sellers ItemID</Description>
 
-                        <Element>
-                            <Term>cbc:ID</Term>
-                            <Name>Item sellers identifier</Name>
-                            <Description>	The sellers identifier for the item.
-                                Associates the item with its identification according to the seller's system. The sellers ID for the item.</Description>
-                            <Value type="EXAMPLE">11111</Value>
-                        </Element>
-                    </Element>
-                    
+                    <Include>part/item/buyer-item-identification.xml</Include>
+
+                    <Include>part/item/seller-item-identification.xml</Include>
+
                     <Element cardinality="0..1">
                         <Term>cac:StandardItemIdentification</Term>
                         <Name>Information about Standard ItemID</Name>

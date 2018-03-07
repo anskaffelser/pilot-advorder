@@ -26,15 +26,10 @@
             <Term>cbc:CustomizationID</Term>
             <Name>Customization identifier</Name>
             <Description>Identifies the specification of content and rules that apply to the transaction.</Description>
-            <Value type="FIXED">urn:www.cenbii.eu:transaction:biitrns076:ver2.0: extended:urn:www.peppol.eu:bis:peppol28a:ver1.0: extended:urn:www.difi.no:ehf:ordrebekreftelse:ver1.0</Value>
+            <Value type="FIXED">urn:fdc:difi.no:2017:ehf:order-response-simple:3.0-pilot</Value>
         </Element>
-        
-        <Element>
-            <Term>cbc:ProfileID</Term>
-            <Name>Profile identifier</Name>
-            <Description>Identifies the BII profile or business process context in which the transaction appears.</Description>
-            <Value type="FIXED">urn:www.cenbii.eu:profile:bii28:ver2.0</Value>
-        </Element>
+
+        <Include>part/document/profile.xml</Include>
 
         <Element>
             <Term>cbc:ID</Term>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure-1" cardinality="0..1">
+    <Term>cac:SellersItemIdentification</Term>
+    <Description>Information about Sellers ItemID</Description>
+
+    <Element>
+        <Term>cbc:ID</Term>
+        <Name>Item sellers identifier</Name>
+        <Description>The seller's identifier for the item.
+            Associates the item with its identification according to the seller's system. The seller's ID for the item.</Description>
+        <Value type="EXAMPLE">11111</Value>
+    </Element>
+</Element>

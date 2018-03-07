@@ -33,6 +33,11 @@ info "Run vefa-structure"
 dc structure
 
 
+info "Build and verify validation artifacts"
+
+dc validator
+
+
 info "Generate documentation"
 
 dc asciidoctor
