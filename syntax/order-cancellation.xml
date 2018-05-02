@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+<Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
     <Term>order-cancellation</Term>
     <Name>Order Cancellation</Name>
 
@@ -19,7 +19,7 @@
             <Term>cbc:UBLVersionID</Term>
             <Name>UBL Version</Name>
             <Description>UBL version used in the message</Description>
-            <Value type="FIXED">2.1</Value>
+            <Value type="FIXED">2.2</Value>
         </Element>
 
         <Element>
@@ -417,4 +417,4 @@
         </Element>
         
     </Document>
-</Structure>
+</Syntax>

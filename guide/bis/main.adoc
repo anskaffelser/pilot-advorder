@@ -20,5 +20,7 @@ include::introduction.adoc[]
 
 include::usecase/index.adoc[]
 
+include::description/index.adoc[]
+
 include::appendix/index.adoc[]
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+<Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
     <Term>order-response-simple</Term>
     <Name>Order Response (Simple)</Name>
 
@@ -19,7 +19,7 @@
             <Term>cbc:UBLVersionID</Term>
             <Name>UBL Version</Name>
             <Description>UBL version used in the message</Description>
-            <Value type="FIXED">2.1</Value>
+            <Value type="FIXED">2.2</Value>
         </Element>
 
         <Element>
@@ -63,6 +63,7 @@
             <Term>cbc:AcceptedIndicator</Term>
             <Name>Accepted indicator</Name>
             <Description>Indication of acceptance.</Description>
+            <Value type="EXAMPLE">true</Value>
         </Element>
 
         <Element cardinality="0..1">
@@ -78,8 +79,20 @@
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Order document reference</Name>
-                <Description>Used to reference the order that  is being responded to.</Description>
+                <Description>Used to reference the order that is being responded to.</Description>
                 <Value type="EXAMPLE">24</Value>
+            </Element>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cac:OrderChangeDocumentReference</Term>
+            <Name>Order Change Reference</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Order change document reference</Name>
+                <Description>Used to reference the order change that is being responded to.</Description>
+                <Value type="EXAMPLE">50</Value>
             </Element>
         </Element>
 
@@ -214,4 +227,4 @@
             </Element>
         </Element>
     </Document>
-</Structure>
+</Syntax>

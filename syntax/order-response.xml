@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+<Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
     <Term>order-response</Term>
     <Name>Order Response</Name>
 
@@ -19,7 +19,7 @@
             <Term>cbc:UBLVersionID</Term>
             <Name>UBL Version</Name>
             <Description>UBL version used in the message</Description>
-            <Value type="FIXED">2.1</Value>
+            <Value type="FIXED">2.2</Value>
         </Element>
 
         <Element>
@@ -102,6 +102,18 @@
             </Element>
         </Element>
 
+        <Element cardinality="0..1">
+            <Term>cac:OrderChangeDocumentReference</Term>
+            <Name>Order Change Reference</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Order change document reference</Name>
+                <Description>Used to reference the order change that is being responded to.</Description>
+                <Value type="EXAMPLE">50</Value>
+            </Element>
+        </Element>
+
         <Element>
             <Term>cac:SellerSupplierParty</Term>
             <Description>Information about Seller</Description>
@@ -162,77 +174,8 @@
             </Element>
         </Element>
 
-        <Element>
-            <Term>cac:BuyerCustomerParty</Term>
-            <Description>Information about Buyer</Description>
+        <Include>part/buyer-customer-party.xml</Include>
 
-            <Element>
-                <Term>cac:Party</Term>
-                <Description>Partyinformation</Description>
-                
-                <Element cardinality="0..1">
-                    <Term>cbc:EndpointID</Term>
-                    <Name>Buyer party endpoint identifier</Name>
-                    <Description>Identifies the end point of the routing service.</Description>
-
-                    <Attribute>
-                        <Term>schemeID</Term>
-                        <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">NO:ORGNR</Value>
-                    </Attribute>
-
-                    <Value type="EXAMPLE">931186755</Value>
-                </Element>
-                
-                <Element cardinality="0..n">
-                    <Term>cac:PartyIdentification</Term>
-                    <Description>Information about PartyID</Description>
-
-                    <Element>
-                        <Term>cbc:ID</Term>
-                        <Name>Buyer party identification</Name>
-                        <Description>An identification for the buyer party.</Description>
-
-                        <Attribute>
-                            <Term>schemeID</Term>
-                            <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                            <Reference type="CODE_LIST">ICD</Reference>
-                            <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                            <Value type="EXAMPLE">GLN</Value>
-                        </Attribute>
-
-                        <Value type="EXAMPLE">7080000985134</Value>
-                    </Element>
-                </Element>
-
-                <Element cardinality="0..1">
-                    <Term>cac:PartyName</Term>
-                    <Description>Information about Party name</Description>
-                    
-                    <Element>
-                        <Term>cbc:Name</Term>
-                        <Name>Buyer party name</Name>
-                        <Description>The name of the party who orders the listed items. </Description>
-                        <Value type="EXAMPLE">Helseforetak</Value>
-                    </Element>
-                </Element>
-
-                <Element cardinality="0..1">
-                    <Term>cac:Contact</Term>
-                    <Name>Contact</Name>
-                    <Description>Contact information</Description>
-
-                    <Element>
-                        <Term>cbc:ID</Term>
-                        <Name>Contact ID</Name>
-                        <Description>Contact identifier for buyer contact person</Description>
-                    </Element>
-                </Element>
-
-            </Element>
-        </Element>
-        
         <Element cardinality="0..1">
             <Term>cac:Delivery</Term>
             <Description>Delivery information</Description>
@@ -627,4 +570,4 @@
             </Element>
         </Element>
     </Document>
-</Structure>
+</Syntax>

@@ -7,23 +7,23 @@
 
     <!-- Data models -->
     <Resource>
-        <Type>Structure-1</Type>
+        <Type>Syntax-1</Type>
         <Path>syntax/order.xml</Path>
     </Resource>
     <Resource>
-        <Type>Structure-1</Type>
+        <Type>Syntax-1</Type>
         <Path>syntax/order-cancellation.xml</Path>
     </Resource>
     <Resource>
-        <Type>Structure-1</Type>
+        <Type>Syntax-1</Type>
         <Path>syntax/order-change.xml</Path>
     </Resource>
     <Resource>
-        <Type>Structure-1</Type>
+        <Type>Syntax-1</Type>
         <Path>syntax/order-response.xml</Path>
     </Resource>
     <Resource>
-        <Type>Structure-1</Type>
+        <Type>Syntax-1</Type>
         <Path>syntax/order-response-simple.xml</Path>
     </Resource>
 

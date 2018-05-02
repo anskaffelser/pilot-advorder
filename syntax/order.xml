@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+<Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
     <Term>order</Term>
     <Name>Order</Name>
 
@@ -19,7 +19,7 @@
             <Term>cbc:UBLVersionID</Term>
             <Name>UBL Version</Name>
             <Description>UBL version used in the message</Description>
-            <Value type="FIXED">2.1</Value>
+            <Value type="FIXED">2.2</Value>
         </Element>
 
         <Element>
@@ -214,160 +214,9 @@
                 <Value type="EXAMPLE">Rammeavtale</Value>
             </Element>
         </Element>
-        
-        <Element>
-            <Term>cac:BuyerCustomerParty</Term>
-            <Description>Information about Buyer</Description>
 
-            <Element>
-                <Term>cac:Party</Term>
-                <Description>Partyinformation</Description>
-                
-                <Element cardinality="0..1">
-                    <Term>cbc:EndpointID</Term>
-                    <Name>Buyer party endpoint identifier</Name>
-                    <Description>Identifies the end point of the routing service.</Description>
+        <Include select="full">part/buyer-customer-party.xml</Include>
 
-                    <Attribute>
-                        <Term>schemeID</Term>
-                        <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">NO:ORGNR</Value>
-                    </Attribute>
-
-                    <Value type="EXAMPLE">931186755</Value>
-                </Element>
-                
-                <Element cardinality="0..1">
-                    <Term>cac:PartyIdentification</Term>
-                    <Description>Information about PartyID</Description>
-
-                    <Element>
-                        <Term>cbc:ID</Term>
-                        <Name>Buyer party identification</Name>
-                        <Description>An identification for the buyer party.</Description>
-
-                        <Attribute>
-                            <Term>schemeID</Term>
-                            <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                            <Reference type="CODE_LIST">ICD</Reference>
-                            <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                            <Value type="EXAMPLE">GLN</Value>
-                        </Attribute>
-
-                        <Value type="EXAMPLE">7080000985134</Value>
-                    </Element>
-                </Element>
-
-                <Element cardinality="0..1">
-                    <Term>cac:PartyName</Term>
-                    <Description>Information about Party name</Description>
-                    
-                    <Element>
-                        <Term>cbc:Name</Term>
-                        <Name>Buyer party name</Name>
-                        <Description>The name of the party who orders the listed items. </Description>
-                        <Value type="EXAMPLE">Helseforetak</Value>
-                    </Element>
-                </Element>
-
-                <Include>part/party-tax-scheme.xml</Include>
-
-                <Include>part/postal-address.xml</Include>
-
-                <Element cardinality="0..1">
-                    <Term>cac:PartyTaxScheme</Term>
-                    <Description>Information about VAT</Description>
-
-                    <Element>
-                        <Term>cbc:CompanyID</Term>
-                        <Name>Buyer VAT identifier</Name>
-                        <Description>The buyers registered  Value Added Tax identifier. To be stated in case reverse charge is to apply to the purchase.</Description>
-
-                        <Attribute>
-                            <Term>schemeID</Term>
-                            <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                            <Reference type="CODE_LIST">ICD</Reference>
-                            <Value type="EXAMPLE">NO:VAT</Value>
-                        </Attribute>
-
-                        <Value type="EXAMPLE">931186755MVA</Value>
-                    </Element>
-
-                    <Element>
-                        <Term>cac:TaxScheme</Term>
-                        <Description>Information about Tax scheme</Description>
-
-                        <Element>
-                            <Term>cbc:ID</Term>
-                            <Value type="FIXED">VAT</Value>
-                        </Element>
-                    </Element>
-                </Element>
-
-                <Element cardinality="0..1">
-                    <Term>cac:PartyLegalEntity</Term>
-                    <Description>Information about Legal entity</Description>
-
-                    <Element cardinality="0..1">
-                        <Term>cbc:RegistrationName</Term>
-                        <Name>Buyers legal registration name</Name>
-                        <Description>The official name of the party as registered with the relevant fiscal authority.</Description>
-                        <Value type="EXAMPLE">Helseforetak AS</Value>
-                    </Element>
-
-                    <Element cardinality="0..1">
-                        <Term>cbc:CompanyID</Term>
-                        <Name>Buyers legal registration identifier</Name>
-                        <Description>Identifies a company as registered with the company registration scheme.</Description>
-
-                        <Attribute>
-                            <Term>schemeID</Term>
-                            <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                            <Reference type="CODE_LIST">ICD</Reference>
-                            <Value type="EXAMPLE">NO:ORGNR</Value>
-                        </Attribute>
-
-                        <Value type="EXAMPLE">931186755</Value>
-                    </Element>
-
-                    <Element cardinality="0..1">
-                        <Term>cac:RegistrationAddress</Term>
-                        <Description>Information about Registration address</Description>
-
-                        <Element cardinality="0..1">
-                            <Term>cbc:CityName</Term>
-                            <Name>Buyers legal registration address city name</Name>
-                            <Description>Associates with the registered address of the party within a Corporate Registration Scheme. The name of a city, town, or village.</Description>
-                            <Value type="EXAMPLE">Oslo</Value>
-                        </Element>
-
-                        <Element cardinality="0..1">
-                            <Term>cac:Country</Term>
-                            <Description>Information about Country</Description>
-
-                            <Element>
-                                <Term>cbc:IdentificationCode</Term>
-                                <Name>Buyers legal registration address country code</Name>
-                                <Description>Buyers legal registration address country ID</Description>
-                                <Reference type="CODE_LIST">ISO3166</Reference>
-
-                                <Attribute>
-                                    <Term>listID</Term>
-                                    <Value type="FIXED">ISO3166-1:Alpha2</Value>
-                                </Attribute>
-
-                                <Value type="EXAMPLE">NO</Value>
-                            </Element>
-                        </Element>
-                    </Element>
-                </Element>
-
-                <Include>part/contact.xml</Include>
-
-            </Element>
-        </Element>
-        
         <Element>
             <Term>cac:SellerSupplierParty</Term>
             <Description>Information about Seller</Description>
@@ -1304,4 +1153,4 @@
             </Element>
         </Element>
     </Document>
-</Structure>
+</Syntax>
