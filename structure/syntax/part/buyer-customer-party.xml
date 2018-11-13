@@ -30,11 +30,10 @@
                 <Name>Buyer party identification</Name>
                 <Description>An identification for the buyer party.</Description>
 
-                <Attribute>
+                <Attribute usage="Optional">
                     <Term>schemeID</Term>
                     <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                     <Reference type="CODE_LIST">ICD</Reference>
-                    <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
                     <Value type="EXAMPLE">GLN</Value>
                 </Attribute>
 

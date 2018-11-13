@@ -10,6 +10,6 @@
     <ns prefix="u" uri="utils"/>
 
     <include href="parts/EMPTY.sch"/>
-    <include href="../../target/generated/basic-order-cancellation.sch"/>
+    <include href="../../../target/generated/basic-order-cancellation.sch"/>
 
 </schema>

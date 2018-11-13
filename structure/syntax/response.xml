@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
-    <Term>order-response</Term>
-    <Name>Order Response</Name>
+    <ElementBlock tag="04">
+        <Term>order-response</Term>
+        <Name>AO04 Order Response</Name>
 
-    <Property key="sch:prefix">EHF-ORDERRESPONSE</Property>
-    <Property key="sch:identifier">basic-order-response</Property>
+        <Property key="sch:prefix">EHF-AO04</Property>
+        <Property key="sch:identifier">basic-order-response</Property>
+    </ElementBlock>
+    <ElementBlock tag="05">
+        <Term>order-response-simple</Term>
+        <Name>AO05 Order Response (Simple)</Name>
+
+        <Property key="sch:prefix">EHF-AO05</Property>
+        <Property key="sch:identifier">basic-order-response-simple</Property>
+    </ElementBlock>
 
     <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
     <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
-    <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2</Namespace>
+    <Namespace tag="04" prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2</Namespace>
+    <Namespace tag="05" prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:OrderResponseSimple-2</Namespace>
 
     <Document>
-        <Term>ubl:OrderResponse</Term>
-        <Name>Order Response</Name>
-        <Description>Norwegian implementation of the CEN BII Order respons</Description>
+        <Term tag="04">ubl:OrderResponse</Term>
+        <Term tag="05">ubl:OrderResponseSimple</Term>
+        <Name tag="04">Order Response</Name>
+        <Name tag="05">Order Response (Simple)</Name>
 
         <Element>
             <Term>cbc:UBLVersionID</Term>
@@ -26,7 +37,8 @@
             <Term>cbc:CustomizationID</Term>
             <Name>Customization identifier</Name>
             <Description>Identifies the specification of content and rules that apply to the transaction.</Description>
-            <Value type="FIXED">urn:fdc:difi.no:2017:ehf:order-response:3.0-pilot</Value>
+            <Value tag="04" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response:3.0-pilot</Value>
+            <Value tag="05" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response-simple:3.0-pilot</Value>
         </Element>
 
         <Include>part/document/profile.xml</Include>
@@ -37,14 +49,14 @@
             <Description>A transaction instance must have an identifier. The identifier enables referencing the transaction  for various purposes such as from other transactions that are part of the same process.</Description>
             <Value type="EXAMPLE">12</Value>
         </Element>
-        
+
         <Element>
             <Term>cbc:IssueDate</Term>
             <Name>Order response issue date</Name>
             <Description>The date on which the transaction instance was issued. Format YYYY-MM-DD.</Description>
             <Value type="EXAMPLE">2012-11-25</Value>
         </Element>
-        
+
         <Element cardinality="0..1">
             <Term>cbc:IssueTime</Term>
             <Name>Order response issue time</Name>
@@ -52,43 +64,56 @@
             <Value type="EXAMPLE">12:00</Value>
         </Element>
 
-        <Element>
+        <Element tag="04">
             <Term>cbc:OrderResponseCode</Term>
             <Name>Response code</Name>
             <Description>A code that indicates whether the referenced order as whole is Accepted or Rejected or, alternatively, Accepted with change.
                 If response code is Accept or Reject there may not be any response lines.
                 Valid codes are: 29 (Accepted), 27 (Rejected) and 30 (Accepted with change)</Description>
-            
+
             <Attribute>
                 <Term>listID</Term>
                 <Name>Codelist for OrderResponseCode</Name>
                 <Value type="FIXED">UNCL1225</Value>
             </Attribute>
-            
+
             <Value type="EXAMPLE">30</Value>
         </Element>
-        
+
         <Element cardinality="0..1">
             <Term>cbc:Note</Term>
             <Name>Response clarification</Name>
             <Description>Clarifacation of the suppliers decision.</Description>
             <Value type="EXAMPLE">Endring på 2 linjer</Value>
         </Element>
-        
-        <Element>
+
+        <Element tag="04">
             <Term>cbc:DocumentCurrencyCode</Term>
             <Name>Currency</Name>
             <Description>The default currency for the order.</Description>
-            
+
             <Attribute>
                 <Term>listID</Term>
                 <Value type="FIXED">ISO4217</Value>
                 <Reference type="CODE_LIST">ISO4217</Reference>
             </Attribute>
-            
+
             <Value type="EXAMPLE">NOK</Value>
         </Element>
-        
+
+        <Element tag="05">
+            <Term>cbc:AcceptedIndicator</Term>
+            <Name>Accepted indicator</Name>
+            <Description>Indication of acceptance.</Description>
+            <Value type="EXAMPLE">true</Value>
+        </Element>
+
+        <Element tag="05" cardinality="0..1">
+            <Term>cbc:RejectionNote</Term>
+            <Name>Note of rejection</Name>
+            <Reference type="RULE">EHF-AO05-R010</Reference>
+        </Element>
+
         <Element>
             <Term>cac:OrderReference</Term>
             <Name>OrderReference</Name>
@@ -146,11 +171,10 @@
                         <Name>Seller party identification</Name>
                         <Description>Identifies a party.</Description>
 
-                        <Attribute>
+                        <Attribute usage="Optional">
                             <Term>schemeID</Term>
                             <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                             <Reference type="CODE_LIST">ICD</Reference>
-                            <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
                             <Value type="EXAMPLE">GLN</Value>
                         </Attribute>
 
@@ -176,7 +200,7 @@
 
         <Include>part/buyer-customer-party.xml</Include>
 
-        <Element cardinality="0..1">
+        <Element tag="04" cardinality="0..1">
             <Term>cac:Delivery</Term>
             <Description>Delivery information</Description>
 
@@ -242,7 +266,7 @@
             </Element>
         </Element>
 
-        <Element cardinality="1..n">
+        <Element tag="04" cardinality="1..n">
             <Term>cac:OrderLine</Term>
             <Description>Order line information</Description>
 
@@ -264,19 +288,19 @@
                     <Description>Clarifacation of the suppliers decision for the line.</Description>
                     <Value type="EXAMPLE">Utsolgt 2 artikler</Value>
                 </Element>
-                
+
                 <Element>
                     <Term>cbc:LineStatusCode</Term>
                     <Name>Response code</Name>
                     <Description>A code that indicates whether the referenced order line as whole is Accepted or Rejected or, alternatively, Accepted with change.
                         Valid codes are: 29 (Accepted), 27(Rejected),  30(Accepted with change)</Description>
-                    
+
                     <Attribute>
                         <Term>listID</Term>
                         <Description>Codelist for LineStatusCode</Description>
                         <Value type="FIXED">UNCL1225</Value>
                     </Attribute>
-                    
+
                     <Value type="EXAMPLE">29</Value>
                 </Element>
 
@@ -298,16 +322,16 @@
 
                     <Value type="EXAMPLE">20</Value>
                 </Element>
-                
+
                 <Element cardinality="0..1">
                     <Term>cac:Delivery</Term>
                     <Description>Delivery information</Description>
-                    
+
                     <Element>
                         <Term>cac:PromisedDeliveryPeriod</Term>
                         <Name>Promised Delivery period</Name>
                         <Description>Information about Promised Delivery period</Description>
-                        
+
                         <Element cardinality="0..1">
                             <Term>cbc:StartDate</Term>
                             <Name>Period start date</Name>
@@ -315,7 +339,7 @@
                                 Format YYYY-MM-DD.</Description>
                             <Value type="EXAMPLE">2012-10-01</Value>
                         </Element>
-                        
+
                         <Element>
                             <Term>cbc:EndDate</Term>
                             <Name>Period end date</Name>
@@ -329,7 +353,7 @@
                 <Element cardinality="0..1">
                     <Term>cac:Price</Term>
                     <Description>Price information</Description>
-                    
+
                     <Element>
                         <Term>cbc:PriceAmount</Term>
                         <Name>Iitem price</Name>
@@ -344,7 +368,7 @@
 
                         <Value type="EXAMPLE">10</Value>
                     </Element>
-                    
+
                     <Element cardinality="0..1">
                         <Term>cbc:BaseQuantity</Term>
                         <Name>Item price base quantity</Name>
@@ -355,7 +379,7 @@
                             <Description>Must be a valid code in codelist UN/ECE Rec 20</Description>
                             <Reference type="CODE_LIST">UNECERec20</Reference>
                         </Attribute>
-                        
+
                         <Attribute>
                             <Term>unitCodeListID</Term>
                             <Value type="FIXED">UNECERec20</Value>
@@ -364,7 +388,7 @@
                         <Value type="EXAMPLE">1</Value>
                     </Element>
                 </Element>
-                
+
                 <Element>
                     <Term>cac:Item</Term>
                     <Description>Item information</Description>
@@ -554,12 +578,12 @@
                     </Element>
                 </Element>
             </Element>
-            
+
             <Element>
                 <Term>cac:OrderLineReference</Term>
                 <Name>Order Line reference</Name>
                 <Description>Information about Order Line reference</Description>
-                
+
                 <Element>
                     <Term>cbc:LineID</Term>
                     <Name>Order line reference</Name>

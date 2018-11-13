@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
     <Term>order-cancellation</Term>
-    <Name>Order Cancellation</Name>
+    <Name>AO02 Order Cancellation</Name>
 
-    <Property key="sch:prefix">EHF-ORDERCANCELLATION</Property>
+    <Property key="sch:prefix">EHF-AO02</Property>
     <Property key="sch:identifier">basic-order-cancellation</Property>
 
     <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
@@ -37,14 +37,14 @@
             <Description>A transaction instance must have an identifier. The identifier enables referencing the transaction  for various purposes such as from other transactions that are part of the same process.</Description>
             <Value type="EXAMPLE">01</Value>
         </Element>
-        
+
         <Element>
             <Term>cbc:IssueDate</Term>
             <Name>Order issue date</Name>
             <Description>The date on which the transaction instance was issued. Format YYYY-MM-DD.</Description>
             <Value type="EXAMPLE">2012-11-25</Value>
         </Element>
-        
+
         <Element cardinality="0..1">
             <Term>cbc:IssueTime</Term>
             <Name>Order issue time</Name>
@@ -57,7 +57,7 @@
             <Name>Document level textual note</Name>
             <Description>Free form text applying to the Order. This element may contain notes or any other similar information that is not contained explicitly in another structure.</Description>
         </Element>
-        
+
         <Element>
             <Term>cac:OrderReference</Term>
             <Name>Order reference</Name>
@@ -69,18 +69,18 @@
                 <Value type="EXAMPLE">5678</Value>
             </Element>
         </Element>
-        
+
         <Element cardinality="0..1">
             <Term>cac:OriginatorDocumentReference</Term>
             <Description>Information about Originator Document reference</Description>
-            
+
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Originator document reference</Name>
                 <Description>A reference to Originator Document. To be able to give a reference to the internal requesition on the buyer site on which the order is based.</Description>
                 <Value type="EXAMPLE">Dok_789</Value>
             </Element>
-            
+
             <Element cardinality="0..1">
                 <Term>cbc:DocumentType</Term>
                 <Name>Originator document description</Name>
@@ -88,11 +88,11 @@
                 <Value type="EXAMPLE">Forespørsel fra mai 2012</Value>
             </Element>
         </Element>
-        
+
         <Element cardinality="0..n">
             <Term>cac:AdditionalDocumentReference</Term>
             <Description>Information about Additional Document reference</Description>
-            
+
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Document identifier</Name>
@@ -110,7 +110,7 @@
             <Element cardinality="0..1">
                 <Term>cac:Attachment</Term>
                 <Description>Information about attachment</Description>
-                
+
                 <Element cardinality="0..1">
                     <Term>cbc:EmbeddedDocumentBinaryObject</Term>
                     <Name>Attached binary object</Name>
@@ -121,11 +121,11 @@
                         <Value type="EXAMPLE">application/pdf</Value>
                     </Attribute>
                 </Element>
-                
+
                 <Element cardinality="0..1">
                     <Term>cac:ExternalReference</Term>
                     <Name>Information about external reference/URI</Name>
-                    
+
                     <Element>
                         <Term>cbc:URI</Term>
                         <Name>External document URI</Name>
@@ -135,18 +135,18 @@
                 </Element>
             </Element>
         </Element>
-        
+
         <Element cardinality="0..1">
             <Term>cac:Contract</Term>
             <Description>Information about Contract</Description>
-            
+
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Reference identifier</Name>
                 <Description>Positive identification of the reference such as a unique identifier.</Description>
                 <Value type="EXAMPLE">2012_10</Value>
             </Element>
-            
+
             <Element cardinality="0..1">
                 <Term>cbc:ContractType</Term>
                 <Name>Reference type</Name>
@@ -155,7 +155,7 @@
                 <Value type="EXAMPLE">Rammeavtale</Value>
             </Element>
         </Element>
-        
+
         <Element>
             <Term>cac:BuyerCustomerParty</Term>
             <Description>Information about Buyer</Description>
@@ -163,7 +163,7 @@
             <Element>
                 <Term>cac:Party</Term>
                 <Description>Partyinformation</Description>
-                
+
                 <Element cardinality="0..1">
                     <Term>cbc:EndpointID</Term>
                     <Name>Buyer party endpoint identifier</Name>
@@ -178,7 +178,7 @@
 
                     <Value type="EXAMPLE">931186755</Value>
                 </Element>
-                
+
                 <Element cardinality="0..1">
                     <Term>cac:PartyIdentification</Term>
                     <Description>Information about PartyID</Description>
@@ -188,11 +188,10 @@
                         <Name>Buyer party identification</Name>
                         <Description>An identification for the buyer party.</Description>
 
-                        <Attribute>
+                        <Attribute usage="Optional">
                             <Term>schemeID</Term>
                             <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                             <Reference type="CODE_LIST">ICD</Reference>
-                            <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
                             <Value type="EXAMPLE">GLN</Value>
                         </Attribute>
 
@@ -203,7 +202,7 @@
                 <Element cardinality="0..1">
                     <Term>cac:PartyName</Term>
                     <Description>Information about Party name</Description>
-                    
+
                     <Element>
                         <Term>cbc:Name</Term>
                         <Name>Buyer party name</Name>
@@ -308,15 +307,15 @@
 
             </Element>
         </Element>
-        
+
         <Element>
             <Term>cac:SellerSupplierParty</Term>
             <Description>Information about Seller</Description>
-            
+
             <Element>
                 <Term>cac:Party</Term>
                 <Description>Partyinformation</Description>
-                
+
                 <Element cardinality="0..1">
                     <Term>cbc:EndpointID</Term>
                     <Name>Seller party endpoint identifier</Name>
@@ -328,35 +327,34 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">NO:ORGNR</Value>
                     </Attribute>
-                    
+
                     <Value type="EXAMPLE">938752655</Value>
                 </Element>
-                
+
                 <Element cardinality="0..1">
                     <Term>cac:PartyIdentification</Term>
                     <Description>Information about PartyID</Description>
-                    
+
                     <Element>
                         <Term>cbc:ID</Term>
                         <Name>Seller party identification</Name>
                         <Description>Identifies a party.</Description>
 
-                        <Attribute>
+                        <Attribute usage="Optional">
                             <Term>schemeID</Term>
                             <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                             <Reference type="CODE_LIST">ICD</Reference>
-                            <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
                             <Value type="EXAMPLE">GLN</Value>
                         </Attribute>
 
                         <Value type="EXAMPLE">7080000374200</Value>
                     </Element>
                 </Element>
-                
+
                 <Element cardinality="0..1">
                     <Term>cac:PartyName</Term>
                     <Description>Information about Party name</Description>
-                    
+
                     <Element>
                         <Term>cbc:Name</Term>
                         <Name>Seller party name</Name>
@@ -370,11 +368,11 @@
                 <Include>part/contact.xml</Include>
             </Element>
         </Element>
-        
+
         <Element cardinality="0..1">
             <Term>cac:OriginatorCustomerParty</Term>
             <Description>Information about Originator</Description>
-            
+
             <Element>
                 <Term>cac:Party</Term>
                 <Description>Party information</Description>
@@ -387,12 +385,11 @@
                         <Term>cbc:ID</Term>
                         <Name>Originator identifier</Name>
                         <Description>Identifies a party.</Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
 
-                        <Attribute>
+                        <Attribute usage="Optional">
                             <Term>schemeID</Term>
                             <Description>Must be according to "PEPPOL policy for identifiers".</Description>
+                            <Reference type="CODE_LIST">ICD</Reference>
                             <Value type="EXAMPLE">GLN</Value>
                         </Attribute>
 
@@ -415,6 +412,6 @@
                 <Include>part/contact.xml</Include>
             </Element>
         </Element>
-        
+
     </Document>
 </Syntax>

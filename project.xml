@@ -1,95 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project xmlns="urn:fdc:difi.no:2017:vefa:structure:Project-1">
 
-    <Name>EHF Advanced Ordering</Name>
+    <Name>EHF Post-Award G3</Name>
 
-    <Documentation path="bis/">Business Interoperablity Specification (BIS)</Documentation>
+    <!-- Documentation -->
+    <Resource>
+        <Type>Doc-1</Type>
+        <Path>bis/</Path>
+        <Title>Business Interoperablity Specification (BIS)</Title>
+        <Tag>advorder-1.0</Tag>
+    </Resource>
 
     <!-- Data models -->
     <Resource>
         <Type>Syntax-1</Type>
-        <Path>syntax/order.xml</Path>
+        <Path>structure/syntax/order.xml</Path>
+        <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
-        <Path>syntax/order-cancellation.xml</Path>
+        <Path>structure/syntax/order-cancellation.xml</Path>
+        <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
-        <Path>syntax/order-change.xml</Path>
+        <Path>structure/syntax/order-change.xml</Path>
+        <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
-        <Path>syntax/order-response.xml</Path>
+        <Path>structure/syntax/response.xml</Path>
+        <!-- <Path>structure/syntax/order-response.xml</Path> -->
+        <Property key="select">04</Property>
+        <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
-        <Path>syntax/order-response-simple.xml</Path>
+        <Path>structure/syntax/response.xml</Path>
+        <!-- <Path>structure/syntax/order-response-simple.xml</Path> -->
+        <Property key="select">05</Property>
+        <Tag>advorder-1.0</Tag>
     </Resource>
 
     <!-- Code lists -->
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>codelist/ISO3166-1_Alpha2.xml</Path>
+        <Path>structure/codelist/ISO3166-1_Alpha2.xml</Path>
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>codelist/ISO4217_2015.xml</Path>
+        <Path>structure/codelist/ISO4217_2015.xml</Path>
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>codelist/ICD.xml</Path>
+        <Path>structure/codelist/ICD.xml</Path>
+        <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>codelist/ICD_UNKNOWN.xml</Path>
+        <Path>structure/codelist/UNCL1001.xml</Path>
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>codelist/UNCL1001.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>codelist/UNECERec20-11e.xml</Path>
+        <Path>structure/codelist/UNECERec20-11e.xml</Path>
+        <Tag>advorder-1.0</Tag>
     </Resource>
 
     <!-- Rules -->
     <Resource>
         <Identifier>empty</Identifier>
         <Type>native:Schematron</Type>
-        <Path>rules/sch/parts/EMPTY.sch</Path>
+        <Path>rules/advorder-1.0/sch/parts/EMPTY.sch</Path>
         <Title>Empty elements</Title>
         <Description>Rules to verify instance documents does not contain empty elements.</Description>
+        <Tag>advorder-1.0</Tag>
+    </Resource>
+    <Resource>
+        <Identifier>business-ao05</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/advorder-1.0/sch/parts/AO05.sch</Path>
+        <Title>Business rules for AO05 Order Response (Simple)</Title>
+        <Tag>advorder-1.0</Tag>
     </Resource>
 
     <!-- Namespace -->
     <Resource>
         <Type>Namespace-1</Type>
-        <Path>namespace/common-cac.xml</Path>
+        <Path>structure/namespace/common-cac.xml</Path>
     </Resource>
     <Resource>
         <Type>Namespace-1</Type>
-        <Path>namespace/common-cbc.xml</Path>
+        <Path>structure/namespace/common-cbc.xml</Path>
     </Resource>
     <Resource>
         <Type>Namespace-1</Type>
-        <Path>namespace/maindoc-order.xml</Path>
+        <Path>structure/namespace/maindoc-order.xml</Path>
     </Resource>
     <Resource>
         <Type>Namespace-1</Type>
-        <Path>namespace/maindoc-order-cancellation.xml</Path>
+        <Path>structure/namespace/maindoc-order-cancellation.xml</Path>
     </Resource>
     <Resource>
         <Type>Namespace-1</Type>
-        <Path>namespace/maindoc-order-change.xml</Path>
+        <Path>structure/namespace/maindoc-order-change.xml</Path>
     </Resource>
     <Resource>
         <Type>Namespace-1</Type>
-        <Path>namespace/maindoc-order-response.xml</Path>
+        <Path>structure/namespace/maindoc-order-response.xml</Path>
     </Resource>
     <Resource>
         <Type>Namespace-1</Type>
-        <Path>namespace/maindoc-order-response-simple.xml</Path>
+        <Path>structure/namespace/maindoc-order-response-simple.xml</Path>
     </Resource>
+
+    <Tag>
+        <Identifier>advorder-1.0</Identifier>
+        <Title>EHF Advanced Ordering 1.0</Title>
+    </Tag>
 
 </Project>
