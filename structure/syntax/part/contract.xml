@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1" cardinality="0..1">
+    <Term>cac:Contract</Term>
+    <Description>Information about Contract</Description>
+
+    <Element>
+        <Term>cbc:ID</Term>
+        <Name>Reference identifier</Name>
+        <Description>Positive identification of the reference such as a unique identifier.</Description>
+        <Value type="EXAMPLE">2012_10</Value>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cbc:ContractType</Term>
+        <Name>Reference type</Name>
+        <Description>The short description of what is reference such as contract type, document type , meter etc.
+            The type of Contract, expressed as text.</Description>
+        <Value type="EXAMPLE">Rammeavtale</Value>
+    </Element>
+</Element>

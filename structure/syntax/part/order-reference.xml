@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
+    <Term>cac:OrderReference</Term>
+    <Name>Order Reference</Name>
+    <Description>Order reference information</Description>
+
+    <Element>
+        <Term>cbc:ID</Term>
+        <Name>Order document reference</Name>
+        <Description>Used to reference the order that  is being responded to.</Description>
+        <Value type="EXAMPLE">24</Value>
+    </Element>
+</Element>

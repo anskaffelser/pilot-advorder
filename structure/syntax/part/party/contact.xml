@@ -25,13 +25,6 @@
     </Element>
 
     <Element cardinality="0..1">
-        <Term>cbc:Telefax</Term>
-        <Name>Contact fax number</Name>
-        <Description>A fax number for the contact persons.</Description>
-        <Value type="EXAMPLE">23055001</Value>
-    </Element>
-
-    <Element cardinality="0..1">
         <Term>cbc:ElectronicMail</Term>
         <Name>Contact email address</Name>
         <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>

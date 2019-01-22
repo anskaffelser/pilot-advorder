@@ -1,15 +1,15 @@
-<Element xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
-    <Term>cac:BuyerCustomerParty</Term>
-    <Description>Information about Buyer</Description>
+<?xml version="1.0" encoding="UTF-8" ?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1" cardinality="0..1">
+    <Term>cac:AccountingCustomerParty</Term>
+    <Description>Information about Invoicee</Description>
 
     <Element>
         <Term>cac:Party</Term>
-        <Description>Partyinformation</Description>
+        <Description>Party information</Description>
 
-        <Element cardinality="0..1">
+        <Element>
             <Term>cbc:EndpointID</Term>
-            <Name>Buyer party endpoint identifier</Name>
-            <Description>Identifies the end point of the routing service.</Description>
+            <Description>En endepunktidentifikator som markerer sluttpunktet for en rutingtjeneste for en melding. Organisasjonsnummer for norske aktører.</Description>
 
             <Attribute>
                 <Term>schemeID</Term>
@@ -17,18 +17,16 @@
                 <Reference type="CODE_LIST">EAS</Reference>
                 <Value type="EXAMPLE">NO:ORGNR</Value>
             </Attribute>
-
-            <Value type="EXAMPLE">931186755</Value>
         </Element>
 
-        <Element cardinality="0..1">
+        <Element>
             <Term>cac:PartyIdentification</Term>
             <Description>Information about PartyID</Description>
 
             <Element>
                 <Term>cbc:ID</Term>
-                <Name>Buyer party identification</Name>
-                <Description>An identification for the buyer party.</Description>
+                <Name>Invoicee party identification</Name>
+                <Description>An identification for the invoicee party.</Description>
 
                 <Attribute usage="Optional">
                     <Term>schemeID</Term>
@@ -36,86 +34,76 @@
                     <Reference type="CODE_LIST">ICD</Reference>
                     <Value type="EXAMPLE">GLN</Value>
                 </Attribute>
-
-                <Value type="EXAMPLE">7080000985134</Value>
             </Element>
         </Element>
 
-        <Element cardinality="0..1">
+        <Element>
             <Term>cac:PartyName</Term>
             <Description>Information about Party name</Description>
 
             <Element>
                 <Term>cbc:Name</Term>
-                <Name>Buyer party name</Name>
-                <Description>The name of the party who orders the listed items. </Description>
-                <Value type="EXAMPLE">Helseforetak</Value>
+                <Name>Invoicee party name</Name>
+                <Description>The name of the party who should be invoiced for the ordered items.</Description>
             </Element>
         </Element>
 
-        <Include tag="full">party/party-tax-scheme.xml</Include>
+        <Include>party/postal-address.xml</Include>
 
-        <Include tag="full">party/postal-address.xml</Include>
+        <Include>party/party-tax-scheme.xml</Include>
 
-        <Element tag="full" cardinality="0..1">
+        <Element cardinality="0..1">
             <Term>cac:PartyLegalEntity</Term>
-            <Description>Information about Legal entity</Description>
+            <Description>Information regarding legal entity</Description>
 
             <Element cardinality="0..1">
                 <Term>cbc:RegistrationName</Term>
-                <Name>Buyers legal registration name</Name>
+                <Name>Legal registration name</Name>
                 <Description>The official name of the party as registered with the relevant fiscal authority.</Description>
-                <Value type="EXAMPLE">Helseforetak AS</Value>
             </Element>
 
             <Element cardinality="0..1">
                 <Term>cbc:CompanyID</Term>
-                <Name>Buyers legal registration identifier</Name>
+                <Name>Legal registration identifier</Name>
                 <Description>Identifies a company as registered with the company registration scheme.</Description>
-
-                <Attribute>
-                    <Term>schemeID</Term>
-                    <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                    <Reference type="CODE_LIST">ICD</Reference>
-                    <Value type="EXAMPLE">NO:ORGNR</Value>
-                </Attribute>
-
-                <Value type="EXAMPLE">931186755</Value>
             </Element>
 
             <Element cardinality="0..1">
                 <Term>cac:RegistrationAddress</Term>
-                <Description>Information about Registration address</Description>
 
-                <Element cardinality="0..1">
+                <Element>
                     <Term>cbc:CityName</Term>
-                    <Name>Buyers legal registration address city name</Name>
+                    <Name>City name</Name>
                     <Description>Associates with the registered address of the party within a Corporate Registration Scheme. The name of a city, town, or village.</Description>
-                    <Value type="EXAMPLE">Oslo</Value>
                 </Element>
 
                 <Element cardinality="0..1">
                     <Term>cac:Country</Term>
-                    <Description>Information about Country</Description>
 
                     <Element>
                         <Term>cbc:IdentificationCode</Term>
-                        <Name>Buyers legal registration address country code</Name>
-                        <Description>Buyers legal registration address country ID</Description>
+                        <Name>Country code</Name>
+                        <Description>Invoicee legal registration address country ID</Description>
                         <Reference type="CODE_LIST">ISO3166</Reference>
 
                         <Attribute>
                             <Term>listID</Term>
                             <Value type="FIXED">ISO3166-1:Alpha2</Value>
                         </Attribute>
-
-                        <Value type="EXAMPLE">NO</Value>
                     </Element>
                 </Element>
             </Element>
         </Element>
 
-        <Include>party/contact.xml</Include>
+        <Element cardinality="0..1">
+            <Term>cac:Contact</Term>
+            <Name>Contact information</Name>
 
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Contact ID</Name>
+                <Description>Invoicee contact identification</Description>
+            </Element>
+        </Element>
     </Element>
 </Element>

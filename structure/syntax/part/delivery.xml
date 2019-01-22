@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1" cardinality="0..1">
+    <Term>cac:Delivery</Term>
+    <Description>Delivery information</Description>
+
+    <Element cardinality="0..1">
+        <Term>cac:DeliveryLocation</Term>
+        <Description>Information about Delivery location</Description>
+
+        <Element cardinality="0..1">
+            <Term>cbc:ID</Term>
+            <Name>Delivery location ID</Name>
+            <Description>An identifer for the location to where the ordered items should be delivered.</Description>
+            <Value type="EXAMPLE">1369</Value>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cac:Address</Term>
+            <Description>Address information</Description>
+
+            <Element cardinality="0..1">
+                <Term>cbc:StreetName</Term>
+                <Name>Address line 1</Name>
+                <Description>The main address line in a postal address usually the street name and number.</Description>
+                <Value type="EXAMPLE">Solheimsveien 10</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:AdditionalStreetName</Term>
+                <Name>Address line 2</Name>
+                <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:CityName</Term>
+                <Name>City</Name>
+                <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
+                <Value type="EXAMPLE">Lørenskog</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:PostalZone</Term>
+                <Name>Post code</Name>
+                <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
+                <Value type="EXAMPLE">1473</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:CountrySubentity</Term>
+                <Name>Country subdivision</Name>
+                <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:Country</Term>
+                <Name>Country information</Name>
+
+                <Element>
+                    <Term>cbc:IdentificationCode</Term>
+                    <Name>Country code</Name>
+                    <Description>The country where the address is. The country should always be given by using ISO code 3166 alpha 2</Description>
+                    <Reference type="CODE_LIST">ISO3166</Reference>
+
+                    <Attribute>
+                        <Term>listID</Term>
+                        <Value type="FIXED">ISO3166-1:Alpha2</Value>
+                    </Attribute>
+
+                    <Value type="EXAMPLE">NO</Value>
+                </Element>
+            </Element>
+        </Element>
+    </Element>
+
+
+    <Element cardinality="0..1">
+        <Term>cac:RequestedDeliveryPeriod</Term>
+        <Description>Information about Requested Delivery period</Description>
+
+        <Element cardinality="0..1">
+            <Term>cbc:StartDate</Term>
+            <Name>Period start date</Name>
+            <Description>The date on which the period starts. The start dates counts as part of the period.
+                Format YYYY-MM-DD.</Description>
+            <Value type="EXAMPLE">2012-10-01</Value>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cbc:EndDate</Term>
+            <Name>Period end date</Name>
+            <Description>The date on which the period ends. The end date counts as part of the period.
+                Format YYYY-MM-DD.</Description>
+            <Value type="EXAMPLE">2013-01-01</Value>
+        </Element>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cac:DeliveryParty</Term>
+        <Description>Information about Delivery party</Description>
+
+        <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Description>Information about PartyID</Description>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Delivery party ID</Name>
+                <Description>An identifier for the party that should deliver the ordered items.</Description>
+
+                <Attribute>
+                    <Term>schemeID</Term>
+                    <Description>Må være i henhold til "PEPPOL policy for identifiers".</Description>
+                    <Reference type="CODE_LIST">ICD</Reference>
+                    <Value type="EXAMPLE">GLN</Value>
+                </Attribute>
+
+                <Value type="EXAMPLE">7080003299288</Value>
+            </Element>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Description>Information about Party name</Description>
+
+            <Element>
+                <Term>cbc:Name</Term>
+                <Name>Delivery party name</Name>
+                <Description>The name of the party that should handle the delivery.</Description>
+                <Value type="EXAMPLE">Helseavdeling</Value>
+            </Element>
+        </Element>
+
+        <Include>party/contact.xml</Include>
+    </Element>
+</Element>

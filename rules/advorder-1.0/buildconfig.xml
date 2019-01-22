@@ -9,8 +9,8 @@
         <identifier>ehf-ao01-pilot</identifier>
         <title>EHF Order (Advanced Ordering)</title>
         <declaration type="xml.ubl">urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot#urn:fdc:difi.no:2017:ehf:order:3.0-pilot</declaration>
-        <inherit>ubl-order-2.1</inherit>
-        <file source="sch/EHF-AO01.sch" path="xsl/EHF-AO01.xsl" infoUrl="/ehf/guide/advorder/rules/{}/"/>
+        <inherit>ubl-2.2</inherit>
+        <file path="sch/EHF-AO01.sch" infoUrl="/ehf/guide/advorder/rules/{}/"/>
     </configuration>
 
     <!-- Order Cancellation -->
@@ -18,8 +18,8 @@
         <identifier>ehf-ao02-pilot</identifier>
         <title>EHF Order Cancellation (Advanced Ordering)</title>
         <declaration type="xml.ubl">urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot#urn:fdc:difi.no:2017:ehf:order-cancellation:3.0-pilot</declaration>
-        <inherit>ubl-order-cancellation-2.1</inherit>
-        <file source="sch/EHF-AO02.sch" path="xsl/EHF-AO02.xsl" infoUrl="/ehf/guide/advorder/rules/{}/"/>
+        <inherit>ubl-2.2</inherit>
+        <file path="sch/EHF-AO02.sch" infoUrl="/ehf/guide/advorder/rules/{}/"/>
     </configuration>
 
     <!-- Order Change -->
@@ -27,8 +27,8 @@
         <identifier>ehf-ao04-pilot</identifier>
         <title>EHF Order Change (Advanced Ordering)</title>
         <declaration type="xml.ubl">urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot#urn:fdc:difi.no:2017:ehf:order-change:3.0-pilot</declaration>
-        <inherit>ubl-order-change-2.1</inherit>
-        <file source="sch/EHF-AO03.sch" path="xsl/EHF-AO03.xsl" infoUrl="/ehf/guide/advorder/rules/{}/"/>
+        <inherit>ubl-2.2</inherit>
+        <file path="sch/EHF-AO03.sch" infoUrl="/ehf/guide/advorder/rules/{}/"/>
     </configuration>
 
     <!-- Order -->
@@ -36,8 +36,8 @@
         <identifier>ehf-ao04-pilot</identifier>
         <title>EHF Order Response (Advanced Ordering)</title>
         <declaration type="xml.ubl">urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot#urn:fdc:difi.no:2017:ehf:order-response:3.0-pilot</declaration>
-        <inherit>ubl-order-response-2.1</inherit>
-        <file source="sch/EHF-AO04.sch" path="xsl/EHF-AO04.xsl" infoUrl="/ehf/guide/advorder/rules/{}/"/>
+        <inherit>ubl-2.2</inherit>
+        <file path="sch/EHF-AO04.sch" infoUrl="/ehf/guide/advorder/rules/{}/"/>
     </configuration>
 
     <!-- Order Response Simple -->
@@ -45,8 +45,8 @@
         <identifier>ehf-ao05-pilot</identifier>
         <title>EHF Simple Order Response (Advanced Ordering)</title>
         <declaration type="xml.ubl">urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot#urn:fdc:difi.no:2017:ehf:order-response-simple:3.0-pilot</declaration>
-        <inherit>ubl-order-response-simple-2.1</inherit>
-        <file source="sch/EHF-AO05.sch" path="xsl/EHF-AO05.xsl" infoUrl="/ehf/guide/advorder/rules/{}/"/>
+        <inherit>ubl-2.2</inherit>
+        <file path="sch/EHF-AO05.sch" infoUrl="/ehf/guide/advorder/rules/{}/"/>
     </configuration>
 
 

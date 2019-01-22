@@ -7,17 +7,19 @@ if [ "$DIAGRAM" = "true" ]; then
 params="$params -r asciidoctor-diagram"
 fi
 for adoc in $(find . -name main.adoc -type f | sort); do
+if [ ! -e "$(dirname $adoc)/.adocignore" ]; then
 echo "Document: $adoc"
 mkdir -p /target/$(dirname $adoc)
 asciidoctor $params $adoc -o /target/$(dirname $adoc)/index.html
+fi
 done
-for assets in $(find . -name .adocassets -type f | sort); do
+find . -name .adocassets -type f | sort > /tmp/assets
+while read assets; do
 echo "Assets: $(dirname $assets)"
-for file in $(find $(dirname $assets) -type f | grep -v .adocassets | sort); do
-mkdir -p /target/$(dirname $assets)
-cp $file /target/$file
-done
-done
+mkdir -p /target/$(dirname $(dirname $assets))
+cp -r $(dirname $assets) /target/$(dirname $assets)
+rm /target/$assets
+done < /tmp/assets
 test ! -e .postasciidoctor.sh || . .postasciidoctor.sh
 )
 trigger_environment() (

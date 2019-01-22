@@ -12,7 +12,7 @@
             <Term>schemeID</Term>
             <Description>Must be according to "PEPPOL policy for identifiers".</Description>
             <Reference type="CODE_LIST">ICD</Reference>
-            <Value type="EXAMPLE">NO:VAT</Value>
+            <Value type="EXAMPLE">0192</Value>
         </Attribute>
 
         <Value type="EXAMPLE">931186755MVA</Value>

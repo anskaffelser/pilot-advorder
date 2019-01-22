@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
 	<cbc:CustomizationID>urn:fdc:difi.no:2017:ehf:order:3.0-pilot</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot</cbc:ProfileID>
 	<cbc:ID>34</cbc:ID>
@@ -43,9 +42,9 @@
 	</cac:Contract>
 	<cac:BuyerCustomerParty>
 		<cac:Party>
-			<cbc:EndpointID schemeID="NO:ORGNR">123456785</cbc:EndpointID>
+			<cbc:EndpointID schemeID="0192">987654325</cbc:EndpointID>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="GLN">6291041500213</cbc:ID>
+				<cbc:ID schemeID="0192">987654325</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
 				<cbc:Name>Helseforetak</cbc:Name>
@@ -60,14 +59,14 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID>123456785MVA</cbc:CompanyID>
+				<cbc:CompanyID schemeID="0192">123456785MVA</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Helseforetak AS</cbc:RegistrationName>
-				<cbc:CompanyID>123456785</cbc:CompanyID>
+				<cbc:CompanyID schemeID="0192">123456785</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<cbc:CityName>Oslo</cbc:CityName>
 					<cac:Country>
@@ -85,9 +84,9 @@
 	</cac:BuyerCustomerParty>
 	<cac:SellerSupplierParty>
 		<cac:Party>
-			<cbc:EndpointID schemeID="NO:ORGNR">987654325</cbc:EndpointID>
+			<cbc:EndpointID schemeID="0192">123456785</cbc:EndpointID>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="GLN">6291041500213</cbc:ID>
+				<cbc:ID schemeID="0192">123456785</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
 				<cbc:Name>Medical</cbc:Name>
@@ -111,7 +110,7 @@
 	<cac:OriginatorCustomerParty>
 		<cac:Party>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="ZZZ">12345</cbc:ID>
+				<cbc:ID>12345</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
 				<cbc:Name>Helseavdeling</cbc:Name>
@@ -125,7 +124,7 @@
 	</cac:OriginatorCustomerParty>
 	<cac:Delivery>
 		<cac:DeliveryLocation>
-			<cbc:ID schemeID="GTIN">12345</cbc:ID>
+			<cbc:ID schemeID="0088">12345</cbc:ID>
 			<cac:Address>
 				<cbc:StreetName>Solheimsveien 10</cbc:StreetName>
 				<cbc:CityName>Lørenskog</cbc:CityName>
@@ -141,7 +140,7 @@
 		</cac:RequestedDeliveryPeriod>
 		<cac:DeliveryParty>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="ZZZ">1369</cbc:ID>
+				<cbc:ID schemeID="0088">1369</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
 				<cbc:Name>Helseavdeling</cbc:Name>
@@ -197,7 +196,7 @@
 			</cac:Delivery>
 			<cac:OriginatorParty>
 				<cac:PartyIdentification>
-					<cbc:ID schemeID="ZZZ">EmployeeXXX</cbc:ID>
+					<cbc:ID>EmployeeXXX</cbc:ID>
 				</cac:PartyIdentification>
 				<cac:PartyName>
 					<cbc:Name>Josef K.</cbc:Name>
@@ -240,7 +239,7 @@
 			</cac:Delivery>
 			<cac:OriginatorParty>
 				<cac:PartyIdentification>
-					<cbc:ID schemeID="ZZZ">EmployeeXXX</cbc:ID>
+					<cbc:ID>EmployeeXXX</cbc:ID>
 				</cac:PartyIdentification>
 				<cac:PartyName>
 					<cbc:Name>Josef K.</cbc:Name>

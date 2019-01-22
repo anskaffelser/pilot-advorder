@@ -15,34 +15,40 @@
     <Resource>
         <Type>Syntax-1</Type>
         <Path>structure/syntax/order.xml</Path>
+        <Property key="select">01</Property>
         <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
         <Path>structure/syntax/order-cancellation.xml</Path>
+        <Property key="select">02</Property>
         <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
         <Path>structure/syntax/order-change.xml</Path>
+        <Property key="select">03</Property>
         <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
-        <Path>structure/syntax/response.xml</Path>
-        <!-- <Path>structure/syntax/order-response.xml</Path> -->
+        <Path>structure/syntax/order-response.xml</Path>
         <Property key="select">04</Property>
         <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
         <Type>Syntax-1</Type>
-        <Path>structure/syntax/response.xml</Path>
-        <!-- <Path>structure/syntax/order-response-simple.xml</Path> -->
+        <Path>structure/syntax/order-response.xml</Path>
         <Property key="select">05</Property>
         <Tag>advorder-1.0</Tag>
     </Resource>
 
     <!-- Code lists -->
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/EAS.xml</Path>
+        <Tag>advorder-1.0</Tag>
+    </Resource>
     <Resource>
         <Type>CodeList-1</Type>
         <Path>structure/codelist/ISO3166-1_Alpha2.xml</Path>
@@ -76,6 +82,14 @@
         <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
+        <Identifier>common</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/advorder-1.0/sch/parts/COMMON.sch</Path>
+        <Title>Common rules</Title>
+        <Description>Common rules general to all documents.</Description>
+        <Tag>advorder-1.0</Tag>
+    </Resource>
+    <Resource>
         <Identifier>business-ao05</Identifier>
         <Type>native:Schematron</Type>
         <Path>rules/advorder-1.0/sch/parts/AO05.sch</Path>
@@ -83,34 +97,25 @@
         <Tag>advorder-1.0</Tag>
     </Resource>
 
-    <!-- Namespace -->
+    <!-- Files -->
     <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/common-cac.xml</Path>
+        <Type>native:File</Type>
+        <Title>Example files</Title>
+        <Description>Zip file containing examples of all document types part of EHF Advanced Ordering 1.0.</Description>
+        <Property key="download">ehf-advorder-examples.zip</Property>
+        <Property key="filename">examples.zip</Property>
+        <Property key="virtual">true</Property>
+        <Tag>advorder-1.0</Tag>
     </Resource>
     <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/common-cbc.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/maindoc-order.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/maindoc-order-cancellation.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/maindoc-order-change.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/maindoc-order-response.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/maindoc-order-response-simple.xml</Path>
+        <Type>native:File</Type>
+        <Path>project.xml</Path>
+        <Title>Schematron files</Title>
+        <Description>Zip file containing Schematron files part of EHF Advanced Ordering 1.0.</Description>
+        <Property key="download">ehf-advorder-schematron.zip</Property>
+        <Property key="filename">schematron.zip</Property>
+        <Property key="virtual">true</Property>
+        <Tag>advorder-1.0</Tag>
     </Resource>
 
     <Tag>

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
-    <ElementBlock tag="04">
-        <Term>order-response</Term>
-        <Name>AO04 Order Response</Name>
 
-        <Property key="sch:prefix">EHF-AO04</Property>
-        <Property key="sch:identifier">basic-order-response</Property>
-    </ElementBlock>
-    <ElementBlock tag="05">
-        <Term>order-response-simple</Term>
-        <Name>AO05 Order Response (Simple)</Name>
+    <Term tag="04">order-response</Term>
+    <Term tag="05">order-response-simple</Term>
+    <Name tag="04">AO04 Order Response</Name>
+    <Name tag="05">AO05 Order Response (Simple)</Name>
 
-        <Property key="sch:prefix">EHF-AO05</Property>
-        <Property key="sch:identifier">basic-order-response-simple</Property>
-    </ElementBlock>
+    <Property tag="04" key="sch:prefix">EHF-AO04</Property>
+    <Property tag="04" key="sch:identifier">basic-order-response</Property>
+    <Property tag="05" key="sch:prefix">EHF-AO05</Property>
+    <Property tag="05" key="sch:identifier">basic-order-response-simple</Property>
 
     <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
     <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
@@ -26,43 +22,10 @@
         <Name tag="04">Order Response</Name>
         <Name tag="05">Order Response (Simple)</Name>
 
-        <Element>
-            <Term>cbc:UBLVersionID</Term>
-            <Name>UBL Version</Name>
-            <Description>UBL version used in the message</Description>
-            <Value type="FIXED">2.2</Value>
-        </Element>
+        <Description tag="04">Order response with structured feedback on line level.</Description>
+        <Description tag="05">Order response indicating simple accept or decline.</Description>
 
-        <Element>
-            <Term>cbc:CustomizationID</Term>
-            <Name>Customization identifier</Name>
-            <Description>Identifies the specification of content and rules that apply to the transaction.</Description>
-            <Value tag="04" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response:3.0-pilot</Value>
-            <Value tag="05" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response-simple:3.0-pilot</Value>
-        </Element>
-
-        <Include>part/document/profile.xml</Include>
-
-        <Element>
-            <Term>cbc:ID</Term>
-            <Name>Order identifier</Name>
-            <Description>A transaction instance must have an identifier. The identifier enables referencing the transaction  for various purposes such as from other transactions that are part of the same process.</Description>
-            <Value type="EXAMPLE">12</Value>
-        </Element>
-
-        <Element>
-            <Term>cbc:IssueDate</Term>
-            <Name>Order response issue date</Name>
-            <Description>The date on which the transaction instance was issued. Format YYYY-MM-DD.</Description>
-            <Value type="EXAMPLE">2012-11-25</Value>
-        </Element>
-
-        <Element cardinality="0..1">
-            <Term>cbc:IssueTime</Term>
-            <Name>Order response issue time</Name>
-            <Description>The time assigned by the buyer on which the order was issued.</Description>
-            <Value type="EXAMPLE">12:00</Value>
-        </Element>
+        <Include>part/basics.xml</Include>
 
         <Element tag="04">
             <Term>cbc:OrderResponseCode</Term>
@@ -80,7 +43,7 @@
             <Value type="EXAMPLE">30</Value>
         </Element>
 
-        <Element cardinality="0..1">
+        <Element tag="04" cardinality="0..1">
             <Term>cbc:Note</Term>
             <Name>Response clarification</Name>
             <Description>Clarifacation of the suppliers decision.</Description>
@@ -114,18 +77,7 @@
             <Reference type="RULE">EHF-AO05-R010</Reference>
         </Element>
 
-        <Element>
-            <Term>cac:OrderReference</Term>
-            <Name>OrderReference</Name>
-            <Description>Order reference information</Description>
-
-            <Element>
-                <Term>cbc:ID</Term>
-                <Name>Order document reference</Name>
-                <Description>Used to reference the order that  is being responded to.</Description>
-                <Value type="EXAMPLE">24</Value>
-            </Element>
-        </Element>
+        <Include>part/order-reference.xml</Include>
 
         <Element cardinality="0..1">
             <Term>cac:OrderChangeDocumentReference</Term>
@@ -139,64 +91,7 @@
             </Element>
         </Element>
 
-        <Element>
-            <Term>cac:SellerSupplierParty</Term>
-            <Description>Information about Seller</Description>
-
-            <Element>
-                <Term>cac:Party</Term>
-                <Description>Party information</Description>
-
-                <Element cardinality="0..1">
-                    <Term>cbc:EndpointID</Term>
-                    <Name>Seller party endpoint identifier</Name>
-                    <Description>Identifies the end point of the routing service, e.g., EAN Location Number, GLN.</Description>
-
-                    <Attribute>
-                        <Term>schemeID</Term>
-                        <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">NO:ORGNR</Value>
-                    </Attribute>
-
-                    <Value type="EXAMPLE">938752655</Value>
-                </Element>
-
-                <Element cardinality="0..n">
-                    <Term>cac:PartyIdentification</Term>
-                    <Description>Information about PartyID</Description>
-
-                    <Element>
-                        <Term>cbc:ID</Term>
-                        <Name>Seller party identification</Name>
-                        <Description>Identifies a party.</Description>
-
-                        <Attribute usage="Optional">
-                            <Term>schemeID</Term>
-                            <Description>Must be according to "PEPPOL policy for identifiers".</Description>
-                            <Reference type="CODE_LIST">ICD</Reference>
-                            <Value type="EXAMPLE">GLN</Value>
-                        </Attribute>
-
-                        <Value type="EXAMPLE">7080000374200</Value>
-                    </Element>
-                </Element>
-
-                <Element cardinality="0..1">
-                    <Term>cac:PartyName</Term>
-                    <Description>Information about Party name</Description>
-
-                    <Element>
-                        <Term>cbc:Name</Term>
-                        <Name>Seller party name</Name>
-                        <Description>The name of the party.</Description>
-                        <Value type="EXAMPLE">Medical</Value>
-                    </Element>
-                </Element>
-
-                <Include>part/contact.xml</Include>
-            </Element>
-        </Element>
+        <Include>part/seller-supplier-party.xml</Include>
 
         <Include>part/buyer-customer-party.xml</Include>
 
@@ -262,7 +157,7 @@
                     </Element>
                 </Element>
 
-                <Include>part/contact.xml</Include>
+                <Include>part/party/contact.xml</Include>
             </Element>
         </Element>
 

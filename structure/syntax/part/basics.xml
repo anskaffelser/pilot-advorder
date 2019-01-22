@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Partial xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
+
+    <Element>
+        <Term>cbc:CustomizationID</Term>
+        <Name>Specification identification</Name>
+
+        <Value tag="01" type="FIXED">urn:fdc:difi.no:2017:ehf:order:3.0-pilot</Value>
+        <Value tag="02" type="FIXED">urn:fdc:difi.no:2017:ehf:order-cancellation:3.0-pilot</Value>
+        <Value tag="03" type="FIXED">urn:fdc:difi.no:2017:ehf:order-change:3.0-pilot</Value>
+        <Value tag="04" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response:3.0-pilot</Value>
+        <Value tag="05" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response-simple:3.0-pilot</Value>
+    </Element>
+
+    <Element>
+        <Term>cbc:ProfileID</Term>
+        <Name>Business process identifier</Name>
+
+        <Value type="FIXED">urn:fdc:difi.no:2017:ehf:adv-ordering:3.0-pilot</Value>
+    </Element>
+
+    <Element>
+        <Term>cbc:ID</Term>
+        <Name>Document identifier</Name>
+
+        <Value type="EXAMPLE">76482</Value>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cbc:UUID</Term>
+        <Name>Unique uniform identifier (UUID)</Name>
+
+        <Value type="EXAMPLE">d13ba97c-3982-4771-95b7-d2ffa3d18d34</Value>
+    </Element>
+
+    <Element>
+        <Term>cbc:IssueDate</Term>
+        <Name>Issue date</Name>
+        <Description>Date of document generation.</Description>
+
+        <Value type="EXAMPLE">2018-12-06</Value>
+    </Element>
+
+    <Element cardinality="0..1">
+        <Term>cbc:IssueTime</Term>
+        <Name>Issue time</Name>
+        <Description>Time of document generation.</Description>
+
+        <Value type="EXAMPLE">14:52:28</Value>
+    </Element>
+
+</Partial>
