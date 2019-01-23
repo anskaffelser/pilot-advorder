@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
-    <Term>order</Term>
+    <Term>order-request</Term>
     <Name>AO06 Order Request</Name>
 
     <Property key="sch:prefix">EHF-AO06</Property>
