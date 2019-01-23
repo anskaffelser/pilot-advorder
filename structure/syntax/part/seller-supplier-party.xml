@@ -7,7 +7,7 @@
         <Term>cac:Party</Term>
         <Description>Partyinformation</Description>
 
-        <Element cardinality="0..1">
+        <Element>
             <Term>cbc:EndpointID</Term>
             <Name>Seller party endpoint identifier</Name>
             <Description>Identifies the end point of the routing service.</Description>
