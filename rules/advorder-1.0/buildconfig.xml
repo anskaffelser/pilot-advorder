@@ -49,5 +49,13 @@
         <file path="sch/EHF-AO05.sch" infoUrl="/ehf/guide/advorder/rules/{}/"/>
     </configuration>
 
+    <!-- Order -->
+    <configuration>
+        <identifier>ehf-ao06-pilot</identifier>
+        <title>EHF Order (Advanced Ordering)</title>
+        <declaration type="xml.ubl">urn:fdc:difi.no:2017:ehf:adv-ordering:03:3.0-pilot#urn:fdc:difi.no:2017:ehf:order-request:3.0-pilot</declaration>
+        <inherit>ubl-2.2</inherit>
+        <file path="sch/EHF-AO06.sch" infoUrl="/ehf/guide/advorder/rules/{}/"/>
+    </configuration>
 
 </buildConfigurations>

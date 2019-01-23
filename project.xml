@@ -42,6 +42,12 @@
         <Property key="select">05</Property>
         <Tag>advorder-1.0</Tag>
     </Resource>
+    <Resource>
+        <Type>Syntax-1</Type>
+        <Path>structure/syntax/order-request.xml</Path>
+        <Property key="select">06</Property>
+        <Tag>advorder-1.0</Tag>
+    </Resource>
 
     <!-- Code lists -->
     <Resource>

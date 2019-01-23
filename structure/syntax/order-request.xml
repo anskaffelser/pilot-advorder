@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Syntax xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
     <Term>order</Term>
-    <Name>AO01 Order</Name>
+    <Name>AO06 Order Request</Name>
 
-    <Property key="sch:prefix">EHF-AO01</Property>
-    <Property key="sch:identifier">basic-order</Property>
+    <Property key="sch:prefix">EHF-AO06</Property>
+    <Property key="sch:identifier">basic-order-request</Property>
 
     <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
     <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
@@ -13,23 +13,9 @@
     <Document>
         <Term>ubl:Order</Term>
         <Name>Order</Name>
-        <Description>Order document sent to seller.</Description>
+        <Description>Order request format for the Norwegian market based on CEN BII</Description>
 
         <Include>part/basics.xml</Include>
-
-        <Element cardinality="0..1">
-            <Term>cbc:OrderTypeCode</Term>
-            <Name>Consignment order indication</Name>
-            <Description>Indicates wether the order is a purchase order or consignement order. Default is purchase order.</Description>
-            <Reference type="CODE_LIST">UNCL1001</Reference>
-
-            <Attribute>
-                <Term>listID</Term>
-                <Value type="FIXED">UNCL1001</Value>
-            </Attribute>
-
-            <!-- <Value type="FIXED">270</Value> -->
-        </Element>
 
         <Element cardinality="0..1">
             <Term>cbc:Note</Term>
@@ -49,13 +35,6 @@
             </Attribute>
 
             <Value type="EXAMPLE">NOK</Value>
-        </Element>
-
-        <Element cardinality="0..1">
-            <Term>cbc:AccountingCost</Term>
-            <Name>Buyers accounting string</Name>
-            <Description>Used by the buyer to specify a reference that should be repeated in e.g. invoice to enable the buyer to automatically book e.g. to the right project, or account.</Description>
-            <Value type="EXAMPLE">112233</Value>
         </Element>
 
         <Element cardinality="0..1">
@@ -82,48 +61,15 @@
             </Element>
         </Element>
 
-        <Element cardinality="0..1">
-            <Term>cac:OrderDocumentReference</Term>
-            <Description>Information about Order Document reference</Description>
-
-            <Element>
-                <Term>cbc:ID</Term>
-                <Name>Order document reference</Name>
-                <Description>Used to reference the initial order that was rejected and a new order is issued.</Description>
-                <Value type="EXAMPLE">Ord_456</Value>
-            </Element>
-        </Element>
-
-        <Element cardinality="0..1">
-            <Term>cac:OriginatorDocumentReference</Term>
-            <Description>Information about Originator Document reference</Description>
-
-            <Element>
-                <Term>cbc:ID</Term>
-                <Name>Originator document reference</Name>
-                <Description>A reference to Originator Document. To be able to give a reference to the internal requesition on the buyer site on which the order is based.</Description>
-                <Value type="EXAMPLE">Dok_789</Value>
-            </Element>
-
-            <Element cardinality="0..1">
-                <Term>cbc:DocumentType</Term>
-                <Name>Originator document description</Name>
-                <Description>Originator document description.</Description>
-                <Value type="EXAMPLE">Forespørsel fra mai 2012</Value>
-            </Element>
-        </Element>
-
         <Include>part/additional-document-reference.xml</Include>
 
         <Include>part/contract.xml</Include>
 
-        <Include select="full">part/buyer-customer-party.xml</Include>
+        <Include>part/buyer-customer-party.xml</Include>
 
         <Include>part/seller-supplier-party.xml</Include>
 
         <Include>part/originator-customer-party.xml</Include>
-
-        <Include>part/accounting-customer-party.xml</Include>
 
         <Include>part/delivery.xml</Include>
 
@@ -159,17 +105,6 @@
                     <Description>An association to Location, e.g., a port. The unique identifier for the location.</Description>
                     <Value type="EXAMPLE">7080003299299</Value>
                 </Element>
-            </Element>
-        </Element>
-
-        <Element cardinality="0..1">
-            <Term>cac:PaymentTerms</Term>
-            <Description>Description of payment terms</Description>
-
-            <Element>
-                <Term>cbc:Note</Term>
-                <Name>Payment terms</Name>
-                <Description>Description of the payment terms for the invoice which will be based on this order</Description>
             </Element>
         </Element>
 
@@ -412,13 +347,6 @@
                     <Name>Partial Delivery Allowed Indicator</Name>
                     <Description>Indicates if the line items must be delivered in a single shipment. Default that partial delivery is allowed.</Description>
                     <Value type="EXAMPLE">false</Value>
-                </Element>
-
-                <Element cardinality="0..1">
-                    <Term>cbc:AccountingCost</Term>
-                    <Name>Buyers accounting string</Name>
-                    <Description>The buyer's accounting information applied to the Line Item, expressed as text.</Description>
-                    <Value type="EXAMPLE">ProjectID123</Value>
                 </Element>
 
                 <Element cardinality="0..1">

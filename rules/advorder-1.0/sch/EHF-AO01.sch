@@ -10,6 +10,7 @@
     <ns prefix="u" uri="utils"/>
 
     <include href="parts/EMPTY.sch"/>
+    <include href="parts/COMMON.sch"/>
     <include href="../../../target/generated/basic-order.sch"/>
 
 </schema>
