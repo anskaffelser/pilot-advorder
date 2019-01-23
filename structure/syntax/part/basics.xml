@@ -10,7 +10,7 @@
         <Value tag="03" type="FIXED">urn:fdc:difi.no:2017:ehf:order-change:3.0-pilot</Value>
         <Value tag="04" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response:3.0-pilot</Value>
         <Value tag="05" type="FIXED">urn:fdc:difi.no:2017:ehf:order-response-simple:3.0-pilot</Value>
-        <Value tag="05" type="FIXED">urn:fdc:difi.no:2017:ehf:order-request:3.0-pilot</Value>
+        <Value tag="06" type="FIXED">urn:fdc:difi.no:2017:ehf:order-request:3.0-pilot</Value>
     </Element>
 
     <Element>
