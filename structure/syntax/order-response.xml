@@ -138,7 +138,8 @@
                             <Term>schemeID</Term>
                             <Description>Må være i henhold til "PEPPOL policy for identifiers".</Description>
                             <Reference type="CODE_LIST">ICD</Reference>
-                            <Value type="EXAMPLE">GLN</Value>
+                            <Reference type="CODE_LIST">ICD_OLD</Reference>
+                            <Value type="EXAMPLE">0088</Value>
                         </Attribute>
 
                         <Value type="EXAMPLE">7080003299288</Value>

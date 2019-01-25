@@ -13,7 +13,7 @@
     <Document>
         <Term>ubl:Order</Term>
         <Name>Order</Name>
-        <Description>Order request format for the Norwegian market based on CEN BII</Description>
+        <Description>Order request format for the Norwegian market.</Description>
 
         <Include>part/basics.xml</Include>
 
@@ -101,8 +101,15 @@
 
                 <Element>
                     <Term>cbc:ID</Term>
-                    <Name>Delivery terms location</Name>
+                    <Name>Delivery location identifier</Name>
                     <Description>An association to Location, e.g., a port. The unique identifier for the location.</Description>
+
+                    <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                    </Attribute>
+
                     <Value type="EXAMPLE">7080003299299</Value>
                 </Element>
             </Element>
@@ -392,7 +399,8 @@
                                 <Term>schemeID</Term>
                                 <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                                 <Reference type="CODE_LIST">ICD</Reference>
-                                <Value type="EXAMPLE">GLN</Value>
+                                <Reference type="CODE_LIST">ICD_OLD</Reference>
+                                <Value type="EXAMPLE">0088</Value>
                             </Attribute>
 
                             <Value type="EXAMPLE">123456789</Value>

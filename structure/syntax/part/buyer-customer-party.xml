@@ -15,7 +15,8 @@
                 <Term>schemeID</Term>
                 <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                 <Reference type="CODE_LIST">EAS</Reference>
-                <Value type="EXAMPLE">NO:ORGNR</Value>
+                <Reference type="CODE_LIST">ICD_OLD</Reference>
+                <Value type="EXAMPLE">0192</Value>
             </Attribute>
 
             <Value type="EXAMPLE">931186755</Value>
@@ -34,7 +35,8 @@
                     <Term>schemeID</Term>
                     <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                     <Reference type="CODE_LIST">ICD</Reference>
-                    <Value type="EXAMPLE">GLN</Value>
+                    <Reference type="CODE_LIST">ICD_OLD</Reference>
+                    <Value type="EXAMPLE">0088</Value>
                 </Attribute>
 
                 <Value type="EXAMPLE">7080000985134</Value>
@@ -77,7 +79,8 @@
                     <Term>schemeID</Term>
                     <Description>Must be according to "PEPPOL policy for identifiers".</Description>
                     <Reference type="CODE_LIST">ICD</Reference>
-                    <Value type="EXAMPLE">NO:ORGNR</Value>
+                    <Reference type="CODE_LIST">ICD_OLD</Reference>
+                    <Value type="EXAMPLE">0192</Value>
                 </Attribute>
 
                 <Value type="EXAMPLE">931186755</Value>

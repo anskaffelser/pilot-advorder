@@ -12,6 +12,7 @@
             <Term>schemeID</Term>
             <Description>Must be according to "PEPPOL policy for identifiers".</Description>
             <Reference type="CODE_LIST">ICD</Reference>
+            <Reference type="CODE_LIST">ICD_OLD</Reference>
             <Value type="EXAMPLE">0192</Value>
         </Attribute>
 

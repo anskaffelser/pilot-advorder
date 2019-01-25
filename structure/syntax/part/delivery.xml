@@ -11,6 +11,14 @@
             <Term>cbc:ID</Term>
             <Name>Delivery location ID</Name>
             <Description>An identifer for the location to where the ordered items should be delivered.</Description>
+
+            <Attribute usage="Optional">
+                <Term>schemeID</Term>
+                <Reference type="CODE_LIST">ICD</Reference>
+                <Reference type="CODE_LIST">ICD_OLD</Reference>
+                <Value type="EXAMPLE">0088</Value>
+            </Attribute>
+
             <Value type="EXAMPLE">1369</Value>
         </Element>
 

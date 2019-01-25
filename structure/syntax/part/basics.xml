@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Partial xmlns="urn:fdc:difi.no:2017:vefa:structure:Syntax-1">
 
+    <Element cardinality="0..1">
+        <Term>cbc:UBLVersionID</Term>
+        <Name>DEPRECATED</Name>
+    </Element>
+
     <Element>
         <Term>cbc:CustomizationID</Term>
         <Name>Specification identification</Name>
