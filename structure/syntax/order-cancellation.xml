@@ -23,6 +23,12 @@
             <Description>Free form text applying to the Order. This element may contain notes or any other similar information that is not contained explicitly in another structure.</Description>
         </Element>
 
+        <Element>
+            <Term>cbc:CancellationNote</Term>
+            <Name>Cancellation reason</Name>
+            <Description>The general reason for cancellation of the referenced order.</Description>
+        </Element>
+
         <Include>part/order-reference.xml</Include>
 
         <Element cardinality="0..1">
