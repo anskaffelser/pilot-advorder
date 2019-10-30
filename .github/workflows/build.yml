@@ -11,5 +11,5 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Run a one-line script
+    - name: Trigger build
       run: make
